@@ -12,6 +12,7 @@ class Main {
     char player = 'X';
     boolean gameOver = false;
     Scanner scanner = new Scanner(System.in);
+    int moves = 0;
 
     while (!gameOver) {
       printBoard(board);
@@ -22,15 +23,14 @@ class Main {
 
       if (board[row][col] == ' ') {
         board[row][col] = player; // place the element
+        moves++;
         gameOver = haveWon(board, player);
         if (gameOver) {
-          System.out.println("Player " + player + " has won: ");
+          System.out.println("Player " + player + " has won!");
+        } else if (moves == 9) {
+          System.out.println("The game is a tie!");
+          gameOver = true;
         } else {
-          // if (player == 'X') {
-          // player = 'O';
-          // } else {
-          // player = 'X';
-          // }
           player = (player == 'X') ? 'O' : 'X';
         }
       } else {
