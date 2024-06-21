@@ -1,2 +1,2 @@
-# tic toc toe uisng two dimensional arrays in JAVA
+# TIC TOC TOE  using JAVA
  
